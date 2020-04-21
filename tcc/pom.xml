@@ -20,11 +20,11 @@
     <parent>
         <groupId>io.seata</groupId>
         <artifactId>seata-samples</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>seata-samples-tcc</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>seata-samples-tcc ${project.version}</name>
     <modules>
@@ -84,17 +84,18 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.1.7</version>
+            <version>1.1.11</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-access -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-access</artifactId>
-            <version>1.1.7</version>
+            <version>1.1.11</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
+            <version>1.1.11</version>
         </dependency>
     </dependencies>
 

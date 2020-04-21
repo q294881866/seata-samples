@@ -21,10 +21,10 @@
     <groupId>io.seata</groupId>
     <artifactId>seata-samples</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.0</version>
+    <version>1.2.0-SNAPSHOT</version>
     <name>seata-samples ${project.version}</name>
     <properties>
-        <seata.version>1.1.0</seata.version>
+        <seata.version>1.2.0-SNAPSHOT</seata.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -43,7 +43,7 @@
         <fastjson.version>1.2.67</fastjson.version>
         <config.version>1.2.1</config.version>
         <slf4j-api.version>1.7.22</slf4j-api.version>
-        <logback-classic.version>1.1.6</logback-classic.version>
+        <logback-classic.version>1.1.11</logback-classic.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-pool2.version>2.4.2</commons-pool2.version>
         <cglib.version>3.1</cglib.version>
@@ -61,24 +61,8 @@
         <druid.version>1.1.12</druid.version>
     </properties>
     <modules>
-        <module>dubbo</module>
-        <module>springboot</module>
-        <module>nacos</module>
-        <module>springboot-dubbo-seata</module>
         <module>tcc</module>
-        <module>springcloud-jpa-seata</module>
-        <module>nutzboot-dubbo-fescar</module>
-        <module>ha</module>
-        <module>springcloud-eureka-seata</module>
-        <module>multiple-datasource</module>
-        <module>springboot-mybatis</module>
-        <module>springcloud-nacos-seata</module>
-        <module>api</module>
-        <module>springboot-shardingsphere-seata</module>
-        <module>multiple-datasource-mybatis-plus</module>
         <module>saga</module>
-        <module>spring-cloud-alibaba-samples</module>
-        <module>seata-spring-boot-starter-samples</module>
     </modules>
 
     <dependencies>
@@ -262,30 +246,30 @@
     </dependencyManagement>
 
     <repositories>
-        <repository>
-            <id>mvnrepository</id>
-            <name>mvnrepository</name>
-            <url>http://www.mvnrepository.com/</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <name>sonatype</name>
-            <url>http://oss.sonatype.org/</url>
-            <layout>default</layout>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+<!--        <repository>-->
+<!--            <id>mvnrepository</id>-->
+<!--            <name>mvnrepository</name>-->
+<!--            <url>http://www.mvnrepository.com/</url>-->
+<!--            <layout>default</layout>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--            <id>sonatype</id>-->
+<!--            <name>sonatype</name>-->
+<!--            <url>http://oss.sonatype.org/</url>-->
+<!--            <layout>default</layout>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
     </repositories>
 
     <build>
