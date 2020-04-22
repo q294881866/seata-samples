@@ -8,16 +8,21 @@ import io.seata.core.context.RootContext;
 import io.seata.samples.tcc.dubbo.action.TccActionOne;
 import io.seata.samples.tcc.dubbo.action.TccActionTwo;
 import io.seata.spring.annotation.GlobalTransactional;
+import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.stereotype.Service;
 
 /**
  * The type Tcc transaction service.
  *
  * @author zhangsen
  */
+@Service
 public class TccTransactionService {
 
+    @Reference
     private TccActionOne tccActionOne;
 
+    @Reference
     private TccActionTwo tccActionTwo;
 
     /**

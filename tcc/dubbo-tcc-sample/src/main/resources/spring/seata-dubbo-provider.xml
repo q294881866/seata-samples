@@ -43,5 +43,10 @@
 
     <!--&lt;!&ndash; 第二个TCC参与者 服务订阅 &ndash;&gt;-->
     <!--<dubbo:reference id="tccActionTwo" interface="io.seata.samples.tcc.dubbo.action.TccActionTwo" check="false" lazy="true"  />-->
+    <bean id="tccTransactionService" class="io.seata.samples.tcc.dubbo.service.TccTransactionService"/>
+    <bean id="tccActionOneImpl" class="io.seata.samples.tcc.dubbo.action.impl.TccActionOneImpl"/>
+
+    <bean id="tccActionTwoImpl" class="io.seata.samples.tcc.dubbo.action.impl.TccActionTwoImpl"/>
+
 
 </beans>

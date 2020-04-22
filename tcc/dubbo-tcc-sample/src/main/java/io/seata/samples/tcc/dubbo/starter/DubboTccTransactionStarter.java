@@ -7,6 +7,7 @@ import io.seata.common.util.StringUtils;
 import io.seata.samples.tcc.dubbo.ApplicationKeeper;
 import io.seata.samples.tcc.dubbo.service.TccTransactionService;
 import org.apache.curator.test.TestingServer;
+import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
@@ -16,6 +17,7 @@ import org.springframework.util.Assert;
  *
  * @author zhangsen
  */
+@DubboComponentScan(value = "io.seata.samples.tcc.dubbo")
 public class DubboTccTransactionStarter {
 
     /**

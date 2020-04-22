@@ -19,6 +19,10 @@
     <orderEntry type="library" name="Maven: com.alipay.sofa:rpc-sofa-boot-starter:5.5.3" level="project" />
     <orderEntry type="library" name="Maven: com.alipay.sofa:rpc-sofa-boot-core:5.5.3" level="project" />
     <orderEntry type="library" name="Maven: com.alipay.sofa:sofa-rpc-all:5.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-dbcp2:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sofa:rpc-sofa-boot-starter:5.5.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sofa:rpc-sofa-boot-core:5.5.3" level="project" />
+    <orderEntry type="library" name="Maven: com.alipay.sofa:sofa-rpc-all:5.5.3" level="project" />
     <orderEntry type="library" name="Maven: com.alipay.sofa:bolt:1.4.6" level="project" />
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.19.0-GA" level="project" />
     <orderEntry type="library" name="Maven: com.alipay.sofa:hessian:3.3.6" level="project" />

@@ -2,20 +2,24 @@ package io.seata.samples.tcc.sofarpc.service;
 
 import java.util.Map;
 
+import com.alipay.sofa.runtime.api.annotation.SofaReference;
 import io.seata.core.context.RootContext;
 import io.seata.samples.tcc.sofarpc.action.TccActionOne;
 import io.seata.samples.tcc.sofarpc.action.TccActionTwo;
 import io.seata.spring.annotation.GlobalTransactional;
+import org.springframework.stereotype.Service;
 
 /**
  * The type Tcc transaction service.
  *
  * @author zhangsen
  */
+@Service
 public class TccTransactionService {
 
+    @SofaReference
     private TccActionOne tccActionOne;
-
+    @SofaReference
     private TccActionTwo tccActionTwo;
 
     /**

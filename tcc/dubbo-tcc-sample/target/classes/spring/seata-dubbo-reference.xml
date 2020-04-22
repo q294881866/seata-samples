@@ -17,13 +17,18 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
        http://code.alibabatech.com/schema/dubbo
-       http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-autowire="byName">
-
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-2.5.xsd" default-autowire="byName">
+    <context:component-scan base-package="io.seata.samples.tcc.dubbo" />
     <dubbo:application name="tcc-sample-reference">
         <dubbo:parameter key="qos.enable" value="false"/>
     </dubbo:application>
+<!--    <dubbo:annotation package="io.seata.samples.tcc.dubbo" />-->
 
     <!--使用 zookeeper 注册中心暴露服务，注意要先开启 zookeeper-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
@@ -33,19 +38,22 @@
 
     <dubbo:provider timeout="10000" threads="10" threadpool="fixed" loadbalance="roundrobin"/>
 
+
+    <bean class="io.seata.spring.tcc.annotation.DubboReferenceAnnotationBeanPostProcessor" />
+
     <!--&lt;!&ndash; 第一个TCC 参与者服务发布 &ndash;&gt;-->
     <!--<dubbo:service interface="io.seata.samples.tcc.dubbo.action.TccActionOne" ref="tccActionOneImpl"/>-->
 
     <!--&lt;!&ndash; 第二个TCC 参与者服务发布 &ndash;&gt;-->
     <!--<dubbo:service interface="io.seata.samples.tcc.dubbo.action.TccActionTwo" ref="tccActionTwoImpl"/>-->
 
-    <!-- 第一个TCC参与者 服务订阅 -->
-    <dubbo:reference id="tccActionOne" interface="io.seata.samples.tcc.dubbo.action.TccActionOne" check="false"
-                     lazy="true"/>
+    <!--    &lt;!&ndash; 第一个TCC参与者 服务订阅 &ndash;&gt;-->
+    <!--    <dubbo:reference id="tccActionOne" interface="io.seata.samples.tcc.dubbo.action.TccActionOne" check="false"-->
+    <!--                     lazy="true"/>-->
 
-    <!-- 第二个TCC参与者 服务订阅 -->
-    <dubbo:reference id="tccActionTwo" interface="io.seata.samples.tcc.dubbo.action.TccActionTwo" check="false"
-                     lazy="true"/>
+    <!--    &lt;!&ndash; 第二个TCC参与者 服务订阅 &ndash;&gt;-->
+    <!--    <dubbo:reference id="tccActionTwo" interface="io.seata.samples.tcc.dubbo.action.TccActionTwo" check="false"-->
+    <!--                     lazy="true"/>-->
 
 
 </beans>

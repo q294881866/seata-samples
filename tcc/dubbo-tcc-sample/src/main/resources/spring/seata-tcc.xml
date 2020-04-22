@@ -26,10 +26,5 @@
         <constructor-arg value="my_test_tx_group"/>
     </bean>
 
-    <bean id="tccActionOneImpl" class="io.seata.samples.tcc.dubbo.action.impl.TccActionOneImpl"/>
-
-    <bean id="tccActionTwoImpl" class="io.seata.samples.tcc.dubbo.action.impl.TccActionTwoImpl"/>
-
-    <bean id="tccTransactionService" class="io.seata.samples.tcc.dubbo.service.TccTransactionService"/>
 
 </beans>
