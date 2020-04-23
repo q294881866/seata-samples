@@ -6,6 +6,7 @@ import java.util.Map;
 import io.seata.common.util.StringUtils;
 import io.seata.samples.tcc.springboot.dubbo.ApplicationKeeper;
 import io.seata.samples.tcc.springboot.dubbo.service.TccTransactionService;
+import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +19,7 @@ import org.springframework.util.Assert;
  * @author zhangsen
  */
 @SpringBootApplication
+@DubboComponentScan("io.seata.samples.tcc.springboot.dubbo")
 @ImportResource("classpath:spring/*.xml")
 public class SpringbootTccTransactionApplication {
 

@@ -8,16 +8,21 @@ import io.seata.core.context.RootContext;
 import io.seata.samples.tcc.springboot.dubbo.action.TccActionOne;
 import io.seata.samples.tcc.springboot.dubbo.action.TccActionTwo;
 import io.seata.spring.annotation.GlobalTransactional;
+import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.rpc.RpcInvocation;
+import org.springframework.stereotype.Service;
 
 /**
  * The type Tcc transaction service.
  *
  * @author zhangsen
  */
+@Service
 public class TccTransactionService {
 
+    @Reference
     private TccActionOne tccActionOne;
-
+    @Reference
     private TccActionTwo tccActionTwo;
 
     /**
@@ -39,6 +44,7 @@ public class TccTransactionService {
         if (!result) {
             throw new RuntimeException("TccActionTwo failed.");
         }
+
         return RootContext.getXID();
     }
 

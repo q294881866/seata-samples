@@ -34,6 +34,6 @@
 <!--    <sofa:reference id="tccActionTwo" interface="io.seata.samples.tcc.sofarpc.action.TccActionTwo">-->
 <!--        <sofa:binding.bolt/>-->
 <!--    </sofa:reference>-->
-    <bean class="io.seata.spring.tcc.annotation.SofaReferenceAnnotationBeanPostProcessor"/>
+    <bean class="io.seata.spring.tcc.TccAnnotationProcessor"/>
 
 </beans>
