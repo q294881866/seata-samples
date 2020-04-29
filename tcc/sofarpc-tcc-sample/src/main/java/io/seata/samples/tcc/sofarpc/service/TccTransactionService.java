@@ -1,13 +1,14 @@
 package io.seata.samples.tcc.sofarpc.service;
 
-import java.util.Map;
-
 import com.alipay.sofa.runtime.api.annotation.SofaReference;
+import com.alipay.sofa.runtime.api.annotation.SofaReferenceBinding;
 import io.seata.core.context.RootContext;
 import io.seata.samples.tcc.sofarpc.action.TccActionOne;
 import io.seata.samples.tcc.sofarpc.action.TccActionTwo;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
 
 /**
  * The type Tcc transaction service.
@@ -17,9 +18,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class TccTransactionService {
 
-    @SofaReference
+    @SofaReference(interfaceType = TccActionOne.class, binding = @SofaReferenceBinding(bindingType = "bolt"))
     private TccActionOne tccActionOne;
-    @SofaReference
+    @SofaReference(interfaceType = TccActionTwo.class, binding = @SofaReferenceBinding(bindingType = "bolt"))
     private TccActionTwo tccActionTwo;
 
     /**
@@ -28,14 +29,14 @@ public class TccTransactionService {
      * @return string string
      */
     @GlobalTransactional
-    public String doTransactionCommit(){
+    public String doTransactionCommit() {
         //第一个TCC 事务参与者
         boolean result = tccActionOne.prepare(null, 1);
-        if(!result){
+        if (!result) {
             throw new RuntimeException("TccActionOne failed.");
         }
         result = tccActionTwo.prepare(null, "two");
-        if(!result){
+        if (!result) {
             throw new RuntimeException("TccActionTwo failed.");
         }
         return RootContext.getXID();
@@ -48,14 +49,14 @@ public class TccTransactionService {
      * @return the string
      */
     @GlobalTransactional
-    public String doTransactionRollback(Map map){
+    public String doTransactionRollback(Map map) {
         //第一个TCC 事务参与者
         boolean result = tccActionOne.prepare(null, 1);
-        if(!result){
+        if (!result) {
             throw new RuntimeException("TccActionOne failed.");
         }
         result = tccActionTwo.prepare(null, "two");
-        if(!result){
+        if (!result) {
             throw new RuntimeException("TccActionTwo failed.");
         }
         map.put("xid", RootContext.getXID());
